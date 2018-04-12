@@ -1,0 +1,13 @@
+FROM opensuse:42.3
+MAINTAINER Alejandro Bonilla "abonilla@suse.com" 
+ENV REFRESHED_AT 2017-11-08
+
+RUN zypper --non-interactive --no-gpg-checks --gpg-auto-import-keys install https://s3-us-west-1.amazonaws.com/cf-cli-releases/releases/v6.32.0/cf-cli-installer_6.32.0_x86-64.rpm
+
+RUN zypper --non-interactive --no-gpg-checks --gpg-auto-import-keys install https://download.opensuse.org/repositories/devel:/CaaSP:/2.0:/ControllerNode/openSUSE_Leap_42.3/x86_64/kubernetes-common-1.7.7-1.5.x86_64.rpm
+
+RUN zypper --non-interactive --no-gpg-checks --gpg-auto-import-keys install https://download.opensuse.org/repositories/devel:/CaaSP:/2.0:/ControllerNode/openSUSE_Leap_42.3/x86_64/kubernetes-client-1.7.7-1.5.x86_64.rpm
+
+RUN zypper --non-interactive --no-gpg-checks --gpg-auto-import-keys install git vim
+
+ENTRYPOINT ["/bin/bash"]
