@@ -1,0 +1,3 @@
+FROM opensuse:42.3
+MAINTAINER Alejandro Bonilla "abonilla@suse.com" 
+ENV REFRESHED_AT 2017-11-08
